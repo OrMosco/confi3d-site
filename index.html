@@ -157,6 +157,16 @@
   .ar-pt{display:flex;gap:12px;align-items:center;font-size:14.5px;color:var(--ink-soft)}
   .ar-pt::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
+  /* Live demo section */
+  .live-demo{background:var(--panel-2);border-bottom:1px solid var(--line);padding:88px 0}
+  .live-demo .eyebrow{color:var(--accent-deep)}
+  .live-demo h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.12;margin:16px 0 14px}
+  .live-demo p.lead{color:var(--mut);font-size:16.5px;max-width:56ch;margin-bottom:34px}
+  .demo-frame-wrap{background:#10131a;border:1px solid var(--line-2);border-radius:18px;padding:10px;box-shadow:0 30px 70px -24px rgba(16,19,26,.4)}
+  .demo-frame-wrap iframe{width:100%;aspect-ratio:16/10;border:0;border-radius:12px;display:block;background:#fff}
+  .demo-note{margin-top:18px;font-family:var(--mono);font-size:13px;color:var(--mut);text-align:center}
+  .demo-note a{color:var(--accent-deep)}
+
   /* iPhone mockup */
   .iphone-wrap{display:flex;justify-content:center;align-items:center;padding:24px 0}
   .iphone{
@@ -175,6 +185,7 @@
     display:flex;align-items:center;justify-content:center;position:relative;
   }
   .iphone-screen video,.iphone-screen img{width:100%;height:100%;object-fit:cover;border-radius:34px}
+  .iphone-screen iframe{width:100%;height:100%;border:0;border-radius:34px;display:block;transform:scale(1)}
   .iphone-screen .screen-ph{
     text-align:center;padding:20px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.4);
     display:flex;flex-direction:column;align-items:center;gap:12px;
@@ -275,21 +286,26 @@
       <div class="iphone-wrap reveal">
         <div class="iphone">
           <div class="iphone-screen">
-            <!-- להחלפה: <video src="YOUR_AR_VIDEO.mp4" autoplay muted loop playsinline></video> -->
-            <!-- או:       <img src="YOUR_AR_SCREENSHOT.jpg" alt="AR Configurator"> -->
-            <div class="screen-ph">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="6" width="36" height="36" rx="4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                <path d="M16 24L24 18L32 24L24 30L16 24Z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
-                <path d="M24 18V12M24 30V36M16 24H10M32 24H38" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-              </svg>
-              וידאו AR<br>ייכנס כאן
-            </div>
+            <!-- כשיגיע סרטון ה-AR יש להחליף את ה-iframe בשורה הבאה:
+                 <video src="AR_VIDEO.mp4" autoplay muted loop playsinline></video> -->
+            <iframe src="https://shed-configurator-nine.vercel.app/" title="קונפיגורטור יחידת חצר — דמו חי" loading="lazy" scrolling="no" tabindex="-1"></iframe>
           </div>
           <div class="ar-badge">AR · QuickLook</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="demo" class="live-demo">
+  <div class="wrap">
+    <span class="eyebrow">Live Demo</span>
+    <h2>קונפיגורטור אמיתי. פועל עכשיו.<br>תנסו אותו ממש כאן.</h2>
+    <p class="lead">זה לא סרטון ולא תמונה — זה הקונפיגורטור החי בעצמו. גררו לסיבוב, בחרו מידה, הוסיפו פאנלים וצבע שלד — והמחיר מתעדכן בזמן אמת.</p>
+    <div class="demo-frame-wrap reveal">
+      <iframe src="https://shed-configurator-nine.vercel.app/" title="דמו חי — קונפיגורטור יחידת חצר" loading="lazy" allow="fullscreen"></iframe>
+    </div>
+    <p class="demo-note">מועדף לנסות במסך מלא? https://shed-configurator-nine.vercel.app</p>
   </div>
 </section>
 
